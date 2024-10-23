@@ -21,6 +21,26 @@ const router = createRouter({
       component: () => import('@/views/About/index.vue')
     },
     {
+      path: '/adopt',
+      name: 'adopt',
+      component: () => import('@/views/Adopt/index.vue')
+    },
+     {
+      path: '/donate',
+      name: 'donate',
+      component: () => import('@/views/Donate/index.vue')
+    },
+    {
+      path: '/adoptRecord',
+      name: 'adoptRecord',
+      component: () => import('@/views/AdoptRecord/index.vue')
+    },
+     {
+      path: '/donateRecord',
+      name: 'donateRecord',
+      component: () => import('@/views/DonateRecord/index.vue')
+    },
+    {
       path: '/pets/:id',
       name: 'pets',
       component: () => import('@/views/Pets/index.vue')
