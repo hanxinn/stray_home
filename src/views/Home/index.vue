@@ -1,4 +1,3 @@
-// Home/index.vue
 
 <script setup></script>
 
@@ -36,9 +35,9 @@
       </div>
     </div>
   </header>
-  <h1>
-    Home
-  </h1>
+  <section class="banner">
+    <h1>讓愛找到歸屬</h1>
+  </section>
   
 </template>
 
@@ -82,6 +81,21 @@
         }
 
       }
+    }
+  }
+  .banner {
+    width: 100%;
+    height: 85vh;
+    background-image: url(../../assets/pic/home/banner.jpg);
+    background-size: cover;
+    background-position: bottom 50px;
+    h1 {
+      text-align: center;
+      padding-top: 100px;
+      text-shadow:  4px 4px #acaaaa;
+      color: white;
+      font-size: 48px;
+      font-weight: bold;
     }
   }
 
