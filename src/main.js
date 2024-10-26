@@ -12,9 +12,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* import specific icons */
 import { faUser, faMoon, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faMoon as faMoonRegular } from '@fortawesome/free-regular-svg-icons'
+import { faSquareFacebook, faLine, faSquareInstagram } from '@fortawesome/free-brands-svg-icons'
 
 /* add icons to the library */
-library.add(faUser, faMoon, faMoonRegular, faGlobe)
+library.add(faUser, faMoon, faMoonRegular, faGlobe, faSquareFacebook, faLine, faSquareInstagram   )
 
 const app = createApp(App)
 
