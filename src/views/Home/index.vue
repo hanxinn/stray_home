@@ -38,6 +38,32 @@
   <section class="banner">
     <h1>讓愛找到歸屬</h1>
   </section>
+  <section class="home">
+    <div class="home-title">
+      <h2>帶我回家</h2>
+    </div>
+    <div class="home-cardlist">
+       <div class="home-card">
+                <div class="home-card-pic">
+                  <div class="home-card-icon">
+                    <font-awesome-icon class="icon" icon="fa-regular fa-heart" />
+                    <font-awesome-icon class="icon" icon="fa-solid fa-link" />
+                  </div>
+                    <img src="../../assets/pic/home/dog1.jpg">
+                </div>
+                <div class="home-card-txt">
+                    <p>
+                      浪浪一號 <br>
+                      約 2024 年出生 <br>
+                      男生 已結紮 <br>
+                      親人溫和 <br>
+                    </p>
+                    <button>下一個</button>
+                </div>
+            </div>
+    </div>
+
+  </section>
   <footer>
     <div class="container">
       <div class="footer-info">
@@ -133,6 +159,69 @@
       color: white;
       font-size: 48px;
       font-weight: bold;
+    }
+  }
+  .home {
+    padding-bottom: 50px;
+    .home-title {
+      h2 {
+        font-size: 32px;
+        color: #98680E;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+    }
+    .home-cardlist {
+      .home-card {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        .home-card-pic {
+          width: 40%;
+          object-fit: cover;
+          position: relative;
+          .home-card-icon {
+            position: absolute;
+            right: -75px;
+            top: 10px;
+            .icon {
+              font-size: 24px;
+              color: white;
+              margin-left: 10px;
+            }
+          }
+          img {
+            display: block;
+            border-radius: 30px 0 0 30px;
+          }
+
+        }
+        .home-card-txt {
+          border-radius: 0 30px 30px 0;
+          width: 60%;
+          background-color: #E7E2DA;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 50px;
+          p {
+            margin-right: 100px;
+            font-size: 24px;
+            line-height: 1.5;
+          }
+          button {
+            background-color: #D5B88E;
+            font-size: 24px;
+            color: white;
+            width: 150px;
+            height: 150px;
+            border: 0;
+            border-radius: 50%;
+          }
+
+        }
+      }
     }
   }
   footer {
