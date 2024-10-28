@@ -45,6 +45,9 @@
     <div class="home-cardlist">
        <div class="home-card">
                 <div class="home-card-pic">
+                  <div class="home-card-adopt">
+                    <p>我要認養</p>
+                  </div>
                   <div class="home-card-icon">
                     <font-awesome-icon class="icon" icon="fa-regular fa-heart" />
                     <font-awesome-icon class="icon" icon="fa-solid fa-link" />
@@ -61,6 +64,33 @@
                     <button>下一個</button>
                 </div>
             </div>
+    </div>
+
+  </section>
+  <section class="popular">
+    <div class="popular-title">
+      <h2>人氣排行</h2>
+    </div>
+    <div class="popular-cardlist">
+      <div class="rank1">
+        <div class="popular-card">
+        <div class="popular-card-pic">
+          <img src="../../assets/pic/home/dog1.jpg">
+        </div>
+
+      </div>
+      
+
+      </div>
+      <div class="low-rank">
+        <div class="popular-card">
+        <div class="popular-card-pic">
+          <img src="../../assets/pic/home/dog1.jpg">
+        </div>
+
+      </div>
+
+      </div>
     </div>
 
   </section>
@@ -162,7 +192,6 @@
     }
   }
   .home {
-    padding-bottom: 50px;
     .home-title {
       h2 {
         font-size: 32px;
@@ -181,9 +210,26 @@
           width: 40%;
           object-fit: cover;
           position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          &:hover .home-card-adopt {
+            bottom: 0;
+          }
+          .home-card-adopt {
+            position: absolute;
+            bottom: -50px;
+            text-align: center;
+            color: white;
+            background-color: #D5B88E;
+            width: 100%;
+            padding: 10px;
+            border-radius: 0 0 0 30px;
+            font-size: 24px;
+            transition: bottom 0.3s ease;
+          }
           .home-card-icon {
             position: absolute;
-            right: -75px;
+            right: 10px;
             top: 10px;
             .icon {
               font-size: 24px;
@@ -194,6 +240,7 @@
           img {
             display: block;
             border-radius: 30px 0 0 30px;
+            width: 100%;
           }
 
         }
@@ -221,6 +268,17 @@
           }
 
         }
+      }
+    }
+  }
+  .popular {
+    .popular-title {
+      h2 {
+        font-size: 32px;
+        color: #98680E;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
       }
     }
   }
