@@ -73,22 +73,73 @@
     </div>
     <div class="popular-cardlist">
       <div class="rank1">
-        <div class="popular-card">
-        <div class="popular-card-pic">
-          <img src="../../assets/pic/home/dog1.jpg">
+        <div class="pop-card">
+          <div class="pop-card-pic">
+            <div class="pop-card-adopt">
+                    <p>我要認養</p>
+                  </div>
+                  <div class="pop-card-icon">
+                    <font-awesome-icon class="icon" icon="fa-regular fa-heart" />
+                    <font-awesome-icon class="icon" icon="fa-solid fa-link" />
+                  </div>
+            <img src="../../assets/pic/home/dog1.jpg">
+          </div>
+
         </div>
-
-      </div>
-      
-
       </div>
       <div class="low-rank">
-        <div class="popular-card">
-        <div class="popular-card-pic">
-          <img src="../../assets/pic/home/dog1.jpg">
-        </div>
+        <div class="pop-card">
+          <div class="pop-card-pic">
+            <div class="pop-card-adopt">
+                    <p>我要認養</p>
+                  </div>
+                  <div class="pop-card-icon">
+                    <font-awesome-icon class="icon" icon="fa-regular fa-heart" />
+                    <font-awesome-icon class="icon" icon="fa-solid fa-link" />
+                  </div>
+            <img src="../../assets/pic/home/dog1.jpg">
+          </div>
 
-      </div>
+        </div>
+        <div class="pop-card">
+          <div class="pop-card-pic">
+            <div class="pop-card-adopt">
+                    <p>我要認養</p>
+                  </div>
+                  <div class="pop-card-icon">
+                    <font-awesome-icon class="icon" icon="fa-regular fa-heart" />
+                    <font-awesome-icon class="icon" icon="fa-solid fa-link" />
+                  </div>
+            <img src="../../assets/pic/home/dog1.jpg">
+          </div>
+
+        </div>
+        <div class="pop-card">
+          <div class="pop-card-pic">
+            <div class="pop-card-adopt">
+                    <p>我要認養</p>
+                  </div>
+                  <div class="pop-card-icon">
+                    <font-awesome-icon class="icon" icon="fa-regular fa-heart" />
+                    <font-awesome-icon class="icon" icon="fa-solid fa-link" />
+                  </div>
+            <img src="../../assets/pic/home/dog1.jpg">
+          </div>
+
+        </div>
+        <div class="pop-card">
+          <div class="pop-card-pic">
+            <div class="pop-card-adopt">
+                    <p>我要認養</p>
+                  </div>
+                  <div class="pop-card-icon">
+                    <font-awesome-icon class="icon" icon="fa-regular fa-heart" />
+                    <font-awesome-icon class="icon" icon="fa-solid fa-link" />
+                  </div>
+            <img src="../../assets/pic/home/dog1.jpg">
+          </div>
+
+        </div>
 
       </div>
     </div>
@@ -140,7 +191,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     .container {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -203,7 +254,7 @@
     }
     .home-cardlist {
       .home-card {
-        width: 1200px;
+        max-width: 1200px;
         margin: 0 auto;
         display: flex;
         .home-card-pic {
@@ -265,6 +316,7 @@
             height: 150px;
             border: 0;
             border-radius: 50%;
+            cursor: pointer;
           }
 
         }
@@ -279,6 +331,103 @@
         text-align: center;
         padding-top: 50px;
         padding-bottom: 50px;
+      }
+    }
+    .popular-cardlist {
+      display: flex;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 3%;
+      .rank1 {
+        width: 50%;
+        .pop-card {
+          .pop-card-pic {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            &:hover .pop-card-adopt {
+            bottom: 0;
+          }
+          .pop-card-adopt {
+            position: absolute;
+            bottom: -50px;
+            text-align: center;
+            color: white;
+            background-color: #D5B88E;
+            width: 100%;
+            padding: 10px;
+            border-radius: 0 0 30px 30px;
+            font-size: 24px;
+            transition: bottom 0.3s ease;
+          }
+          .pop-card-icon {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            .icon {
+              font-size: 24px;
+              color: white;
+              margin-left: 10px;
+            }
+          }
+            img {
+              width: 100%;
+              object-fit: cover;
+              display: block;
+              border-radius: 30px;
+            }
+          }
+
+        }
+
+
+      }
+      .low-rank {
+        width: 50%;
+        display: flex;
+        gap: 6%;
+        flex-wrap: wrap;
+        .pop-card {
+          width: 47%;
+          .pop-card-pic {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            &:hover .pop-card-adopt {
+            bottom: 0;
+          }
+          .pop-card-adopt {
+            position: absolute;
+            bottom: -50px;
+            text-align: center;
+            color: white;
+            background-color: #D5B88E;
+            width: 100%;
+            padding: 10px;
+            border-radius: 0 0 30px 30px;
+            font-size: 24px;
+            transition: bottom 0.3s ease;
+          }
+          .pop-card-icon {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            .icon {
+              font-size: 24px;
+              color: white;
+              margin-left: 10px;
+            }
+          }
+            img {
+              width: 100%;
+              object-fit: cover;
+              display: block;
+              border-radius: 30px;
+            }
+          }
+
+        }
       }
     }
   }
