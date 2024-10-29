@@ -145,6 +145,74 @@
     </div>
 
   </section>
+  <section class="new">
+    <div class="new-title">
+      <h2>新到家人</h2>
+    </div>
+    <div class="container">
+      <div class="new-card">
+                <div class="new-card-pic">
+                  <div class="new-card-adopt">
+                    <p>我要認養</p>
+                  </div>
+                  <div class="new-card-icon">
+                    <font-awesome-icon class="icon" icon="fa-regular fa-heart" />
+                    <font-awesome-icon class="icon" icon="fa-solid fa-link" />
+                  </div>
+                    <img src="../../assets/pic/home/dog1.jpg">
+                </div>
+                <div class="new-card-txt">
+                    <p>
+                      浪浪一號 <br>
+                      約 2024 年出生 <br>
+                      男生 已結紮 <br>
+                      親人溫和 <br>
+                    </p>
+                </div>
+      </div>
+      <div class="new-card">
+                <div class="new-card-pic">
+                  <div class="new-card-adopt">
+                    <p>我要認養</p>
+                  </div>
+                  <div class="new-card-icon">
+                    <font-awesome-icon class="icon" icon="fa-regular fa-heart" />
+                    <font-awesome-icon class="icon" icon="fa-solid fa-link" />
+                  </div>
+                    <img src="../../assets/pic/home/dog1.jpg">
+                </div>
+                <div class="new-card-txt">
+                    <p>
+                      浪浪一號 <br>
+                      約 2024 年出生 <br>
+                      男生 已結紮 <br>
+                      親人溫和 <br>
+                    </p>
+                </div>
+      </div>
+      <div class="new-card">
+                <div class="new-card-pic">
+                  <div class="new-card-adopt">
+                    <p>我要認養</p>
+                  </div>
+                  <div class="new-card-icon">
+                    <font-awesome-icon class="icon" icon="fa-regular fa-heart" />
+                    <font-awesome-icon class="icon" icon="fa-solid fa-link" />
+                  </div>
+                    <img src="../../assets/pic/home/dog1.jpg">
+                </div>
+                <div class="new-card-txt">
+                    <p>
+                      浪浪一號 <br>
+                      約 2024 年出生 <br>
+                      男生 已結紮 <br>
+                      親人溫和 <br>
+                    </p>
+                </div>
+      </div>
+    </div>
+
+  </section>
   <footer>
     <div class="container">
       <div class="footer-info">
@@ -427,6 +495,76 @@
             }
           }
 
+        }
+      }
+    }
+  }
+  .new {
+    padding-bottom: 50px;
+    .new-title {
+      h2 {
+        font-size: 32px;
+        color: #98680E;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+    }
+    .container {
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      .new-card {
+        width: 32%;
+        .new-card-pic {
+          object-fit: cover;
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          &:hover .new-card-adopt {
+            bottom: 0;
+          }
+          .new-card-adopt {
+            position: absolute;
+            bottom: -50px;
+            text-align: center;
+            color: white;
+            background-color: #D5B88E;
+            width: 100%;
+            padding: 10px;
+            font-size: 24px;
+            transition: bottom 0.3s ease;
+          }
+          .new-card-icon {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            .icon {
+              font-size: 24px;
+              color: white;
+              margin-left: 10px;
+            }
+          }
+          img {
+            display: block;
+            border-radius: 30px 30px 0 0;
+            width: 100%;
+          }
+
+        }
+        .new-card-txt {
+          border-radius: 0 0 30px 30px;
+          width: 100%;
+          background-color: #E7E2DA;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 30px;
+          p {
+            font-size: 24px;
+            line-height: 1.5;
+          }
         }
       }
     }
