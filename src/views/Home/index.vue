@@ -278,6 +278,9 @@
           a {
             text-decoration: none;
             color: #98680E;
+            &:hover {
+              color: #FFC408;
+            }
             li {
               margin-right: 50px;
             }
@@ -290,6 +293,10 @@
           font-size: 24px;
           margin-left: 20px;
           color: #98680E;
+          cursor: pointer;
+          &:hover {
+              color: #FFC408;
+            }
         }
 
       }
@@ -377,6 +384,9 @@
             line-height: 1.5;
           }
           button {
+            &:hover {
+              background-color: #FFC408;
+            }
             background-color: #D5B88E;
             font-size: 24px;
             color: white;
@@ -596,6 +606,9 @@
           a {
             text-decoration: none;
             color: white;
+            &:hover {
+              color: #FFC408;
+            }
             li {
               margin-bottom: 10px;
               margin-left: 150px;
@@ -613,6 +626,10 @@
           font-size: 24px;
           margin-left: 10px;
           color: white;
+          cursor: pointer;
+          &:hover {
+              color: #FFC408;
+            }
         }
       }
       }
