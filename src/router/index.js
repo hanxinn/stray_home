@@ -50,6 +50,11 @@ const router = createRouter({
       name: 'notFound',
       component: () => import('@/views/NotFound/index.vue'),
     },
+     {
+      path: '/adoptFlow',
+      name: 'adoptFlow',
+      component: () => import('@/views/AdoptFlow/index.vue')
+    },
   ]
 })
 
