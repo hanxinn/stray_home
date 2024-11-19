@@ -16,7 +16,7 @@ const pet = computed(() => petStore.pets.find(item => item.id === routeId))
   <section class="info-section">
     <div class="container">
       <div class="info-pic">
-        <img :src="pet.image" alt="寵物">
+        <img :src="pet.image" alt="pet.name">
       </div>
       <div class="info-txt">
         <div class="info-name">
@@ -25,7 +25,7 @@ const pet = computed(() => petStore.pets.find(item => item.id === routeId))
         <div class="pet-details">
           <div class="pet-info breed">
             <span class="info-label">品種：</span>
-            <span class="info-value">米克斯</span>
+            <span class="info-value">{{ pet.breed }}</span>
           </div>
           <div class="pet-info type">
             <span class="info-label">種類：</span>
@@ -37,31 +37,31 @@ const pet = computed(() => petStore.pets.find(item => item.id === routeId))
           </div>
           <div class="pet-info size">
             <span class="info-label">體型：</span>
-            <span class="info-value">中型</span>
+            <span class="info-value">{{ pet.size }}</span>
           </div>
           <div class="pet-info color">
             <span class="info-label">毛色：</span>
-            <span class="info-value">黃色</span>
+            <span class="info-value">{{ pet.color }}</span>
           </div>
           <div class="pet-info age">
             <span class="info-label">年紀：</span>
-            <span class="info-value">約 2024 年出生</span>
+            <span class="info-value">約 {{ pet.birth }} 年出生</span>
           </div>
           <div class="pet-info neutered">
             <span class="info-label">結紮：</span>
-            <span class="info-value">已結紮</span>
+            <span class="info-value">{{ pet.isNeutered? "已結紮" : "未結紮" }}</span>
           </div>
           <div class="pet-info personality">
             <span class="info-label">個性：</span>
-            <span class="info-value">親人溫和</span>
+            <span class="info-value">{{ pet.description }}</span>
           </div>
           <div class="pet-info location">
             <span class="info-label">所在地：</span>
-            <span class="info-value">台中店</span>
+            <span class="info-value">{{ pet.store }}</span>
           </div>
           <div class="pet-info post-date">
             <span class="info-label">刊登日期：</span>
-            <span class="info-value">{{ formatDate(pet.adoptDate) }}</span>
+            <span class="info-value">{{ formatDate(pet.adoptedDate) }}</span>
           </div>
         </div>
         <div class="pet-button">
