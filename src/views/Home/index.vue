@@ -6,7 +6,26 @@ import { petApi } from '@/api/pet';
 
 const imgUrl = "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
+import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
+import { usePetStore } from '@/store/pet'
 
+const petStore = usePetStore()
+
+
+// pinia => 數據存在本地(localStorage, sessionStorage)
+const router = useRouter()
+const changePage = (url) => {
+  router.push(url)
+}
+const addToFavorite = (id) => {
+  console.log(id);
+}
+const copy = (id) => {
+  console.log(id);
+}
+
+const hotPets = computed(() => [...petStore.pets].sort((a, b) => b.likeNum - a.likeNum).slice(0, 5))
 </script>
 
 <template>
@@ -50,21 +69,18 @@ const imgUrl = "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?q=8
     <div class="popular-cardlist">
       <div class="rank1">
         <pop-card
-          :image= "imgUrl"
+          :image="hotPets[0].image"
+          @change-page="changePage(`/pets/${hotPets[0].id}`)"
+          @add-to-favorite="addToFavorite(hotPets[0].id)"
+          @copy="copy(hotPets[0].id)"
          />
       </div>
-      <div class="low-rank">
-        <pop-card
-          :image= "imgUrl"
-         />
-         <pop-card
-          :image= "imgUrl"
-         />
-         <pop-card
-          :image= "imgUrl"
-         />
-         <pop-card
-          :image= "imgUrl"
+      <div  class="low-rank">
+        <pop-card v-for="item in hotPets.slice(1, 5)" :key="item.id"
+          :image="item.image"
+            @change-page="changePage(`/pets/${item.id}`)"
+            @add-to-favorite="addToFavorite(item.id)"
+            @copy="copy(item.id)"
          />
 
       </div>
@@ -85,14 +101,14 @@ const imgUrl = "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?q=8
       />
       <new-card
         :image= "imgUrl"
-        name="浪浪1號" 
+        name="浪浪2號" 
         :year="2024"
         :is-neutered="true"
         description="親人溫和"
       />
       <new-card
         :image= "imgUrl"
-        name="浪浪1號" 
+        name="浪浪3號" 
         :year="2024"
         :is-neutered="true"
         description="親人溫和"

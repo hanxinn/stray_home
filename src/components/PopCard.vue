@@ -1,4 +1,5 @@
 <script setup>
+import { defineProps, defineEmits } from 'vue'
 
 defineProps({
   image: {
@@ -6,22 +7,33 @@ defineProps({
   }
 })
 
+const emit = defineEmits(['changePage', 'addToFavorite', 'copy'])
+
+const changePage = () => {
+  emit('changePage')
+}
+const addToFavorite = () => {
+  emit('addToFavorite')
+}
+const copy = () => {
+  emit('copy')
+}
 </script>
 
 
 <template>
   <div class="pop-card">
-    <div class="pop-card-pic">
-      <div class="pop-card-adopt">
-        <p>我要認養</p>
+      <div class="pop-card-pic">
+        <div class="pop-card-adopt" @click="changePage">
+          <p>我要認養</p>
+        </div>
+        <div class="pop-card-icon">
+          <font-awesome-icon @click="addToFavorite" class="icon" icon="fa-regular fa-heart" />
+          <font-awesome-icon @click="copy" class="icon" icon="fa-solid fa-link" />
+        </div>
+        <img @click="changePage" :src="image">
       </div>
-      <div class="pop-card-icon">
-        <font-awesome-icon class="icon" icon="fa-regular fa-heart" />
-        <font-awesome-icon class="icon" icon="fa-solid fa-link" />
-      </div>
-      <img :src="image">
     </div>
-  </div>
 </template>
 <style lang="scss" scoped>
 .pop-card {
