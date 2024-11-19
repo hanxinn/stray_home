@@ -3,6 +3,8 @@ import '@/assets/css/index.css'
 import App from './App.vue'
 import router from './router' // 1. 引入 router
 
+import '@/mock/index.js'
+
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
 
