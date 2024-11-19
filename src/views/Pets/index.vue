@@ -1,14 +1,26 @@
-<script setup></script>
+<script setup>
+import { usePetStore } from '@/store/pet'
+import { useRoute } from 'vue-router'
+import { computed, ref } from 'vue'
+import { formatDate } from '@/utils/time'
+
+const petStore = usePetStore()
+const route = useRoute()
+const routeId = Number(route.params.id)
+
+const pet = computed(() => petStore.pets.find(item => item.id === routeId))
+
+</script>
 
 <template>
   <section class="info-section">
     <div class="container">
       <div class="info-pic">
-        <img src="../../assets/pic/home/dog1.jpg" alt="寵物">
+        <img :src="pet.image" alt="寵物">
       </div>
       <div class="info-txt">
         <div class="info-name">
-          <h1>浪浪一號</h1>
+          <h1>{{ pet.name }}</h1>
         </div>
         <div class="pet-details">
           <div class="pet-info breed">
@@ -17,11 +29,11 @@
           </div>
           <div class="pet-info type">
             <span class="info-label">種類：</span>
-            <span class="info-value">狗</span>
+            <span class="info-value">{{ pet.type }}</span>
           </div>
           <div class="pet-info gender">
             <span class="info-label">性別：</span>
-            <span class="info-value">男生</span>
+            <span class="info-value">{{ pet.gender }}</span>
           </div>
           <div class="pet-info size">
             <span class="info-label">體型：</span>
@@ -49,7 +61,7 @@
           </div>
           <div class="pet-info post-date">
             <span class="info-label">刊登日期：</span>
-            <span class="info-value">2024-10-20</span>
+            <span class="info-value">{{ formatDate(pet.adoptDate) }}</span>
           </div>
         </div>
         <div class="pet-button">
