@@ -4,7 +4,7 @@ import App from './App.vue'
 import router from './router' // 1. 引入 router
 import { createPinia } from 'pinia' // 1
 import persist from 'pinia-plugin-persistedstate' // 2
-
+import Antd from 'ant-design-vue'; // 1. 導入 antd
 import '@/mock/index.js'
 
 /* import the fontawesome core */
@@ -28,5 +28,6 @@ pinia.use(persist) // 4
 app
 .use(router)
 .use(pinia)
+.use(Antd)
 .component('font-awesome-icon', FontAwesomeIcon)
 .mount('#app') // 2. 使用 router

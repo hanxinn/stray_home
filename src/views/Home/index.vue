@@ -248,6 +248,7 @@ const hotPets = computed(() => [...petStore.pets].sort((a, b) => b.likeNum - a.l
         flex-wrap: wrap;
         .pop-card {
           width: 47%;
+          height: 47%;
 
         }
       }

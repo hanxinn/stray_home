@@ -33,7 +33,7 @@ const copy = () => {
         </div>
         <img @click="changePage" :src="image">
       </div>
-    </div>
+  </div>
 </template>
 <style lang="scss" scoped>
 .pop-card {
@@ -42,6 +42,13 @@ const copy = () => {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 30px;
+    }
 
     &:hover .pop-card-adopt {
       bottom: 0;
@@ -72,12 +79,7 @@ const copy = () => {
       }
     }
 
-    img {
-      width: 100%;
-      object-fit: cover;
-      display: block;
-      border-radius: 30px;
-    }
+   
   }
 
 }

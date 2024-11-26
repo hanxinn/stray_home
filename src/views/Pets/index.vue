@@ -16,7 +16,7 @@ const pet = computed(() => petStore.pets.find(item => item.id === routeId))
   <section class="info-section">
     <div class="container">
       <div class="info-pic">
-        <img :src="pet.image" alt="pet.name">
+        <img :src="pet.image" :alt="pet.name">
       </div>
       <div class="info-txt">
         <div class="info-name">
