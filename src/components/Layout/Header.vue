@@ -1,9 +1,9 @@
 <script setup>
-import { ref, reactive } from 'vue'
-import axios from 'axios'
+import { ref, reactive } from 'vue';
+import axios from 'axios';
 import { message } from 'ant-design-vue';
-import { useUserStore } from '@/store/user'
-import { userApi } from '@/api/user'
+import { useUserStore } from '@/store/user';
+import { userApi } from '@/api/user';
 
 const userStore = useUserStore()
 console.log(userStore);
@@ -43,7 +43,7 @@ const loginData = reactive({
 
 const token = ref(userStore.token)
 
-const submit = async() => {
+const submit = async () => {
   if (!loginData.username || !loginData.password) {
     message.warning('請輸入使用者名稱或密碼')
     return
@@ -55,7 +55,7 @@ const submit = async() => {
     userStore.setFirstName(firstName) // 存進store
     userStore.setToken(accessToken) // 存進store
     message.success('登入成功')
-  } catch(err) {
+  } catch (err) {
     console.error(err)
     message.error('使用者名稱或密碼錯誤')
   } finally {
@@ -76,7 +76,7 @@ const logout = () => {
       <div class="logo">
         <RouterLink to="/"><img class="header-logo" src="@/assets/pic/home/headerlogo.png" alt="logo"></RouterLink>
       </div>
-      <div class="header-nav"> 
+      <div class="header-nav">
         <ul>
           <RouterLink to="/about">
             <li>關於浪窩</li>
@@ -97,7 +97,7 @@ const logout = () => {
 
       </div>
       <div class="login">
-        <span v-if="token" class="name-span" >{{ loginData.firstName }}</span>
+        <span v-if="token" class="name-span">{{ loginData.firstName }}</span>
         <a-button v-if="token" @click="logout">登出</a-button>
         <font-awesome-icon v-else @click="openModal(true)" class="icon" icon="fa-solid fa-user" />
         <font-awesome-icon class="icon" icon="fa-solid fa-globe" />
@@ -107,67 +107,86 @@ const logout = () => {
     </div>
   </header>
   <a-modal v-model:open="open" title="登入" @ok="submit" @cancel="openModal(false)" :okText="'送出'" :cancelText="'關閉'">
-    <div>
+    <div class="form-input">
       <label for="username">使用者名稱：</label>
       <input v-model="loginData.username" type="text" id="username" name="username">
     </div>
-    <div>
+    <div class="form-input">
       <label for="password">密碼：</label>
       <input v-model="loginData.password" type="password" id="password" name="password">
     </div>
   </a-modal>
+
 </template>
 <style lang="scss" scoped>
+.form-input {
+  margin-bottom: 10px;
+  display: flex;
 
-  header {
-      background-color: #E7E2DA;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
+  label {
+    width: 20%;
+  }
+}
+
+header {
+  background-color: #E7E2DA;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      .header-logo {
+        height: 80px;
+      }
+
+    }
+
+    .header-nav {
+      font-size: 24px;
+      color: #98680E;
+
+      ul {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .logo {
-          .header-logo {
-            height: 80px;
-          }
 
-        }
-        .header-nav {
-          font-size: 24px;
+        a {
+          text-decoration: none;
           color: #98680E;
-          ul {
-            display: flex;
-            a {
-              text-decoration: none;
-              color: #98680E;
-              &:hover {
-                color: #FFC408;
-              }
-              li {
-                margin-right: 50px;
-              }
-            }
+
+          &:hover {
+            color: #FFC408;
           }
 
-        }
-        .login {
-          .name-span {
-            margin-right: 10px;
+          li {
+            margin-right: 50px;
           }
-          .icon {
-            font-size: 24px;
-            margin-left: 20px;
-            color: #98680E;
-            cursor: pointer;
-            &:hover {
-                color: #FFC408;
-              }
-          }
-
         }
       }
+
     }
+
+    .login {
+      .name-span {
+        margin-right: 10px;
+      }
+
+      .icon {
+        font-size: 24px;
+        margin-left: 20px;
+        color: #98680E;
+        cursor: pointer;
+
+        &:hover {
+          color: #FFC408;
+        }
+      }
+
+    }
+  }
+}
 </style>
