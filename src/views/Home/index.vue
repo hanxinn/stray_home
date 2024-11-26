@@ -56,7 +56,7 @@ const hotPets = computed(() => [...petStore.pets].sort((a, b) => b.likeNum - a.l
                       男生 已結紮 <br>
                       親人溫和 <br>
                     </p>
-                    <button>下一個</button>
+                    <button>隨機選取</button>
                 </div>
             </div>
     </div>
@@ -188,6 +188,7 @@ const hotPets = computed(() => [...petStore.pets].sort((a, b) => b.likeNum - a.l
             display: block;
             border-radius: 30px 0 0 30px;
             width: 100%;
+            height: 100%;
           }
 
         }
